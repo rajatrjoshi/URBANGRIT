@@ -19,7 +19,9 @@ const ProductDetails = ({product, products}) => {
             </div>
             <div className='small-images-container'>
                 {image?.map((item, i) => (
-                    <img src={urlFor(item)}
+                    <img 
+                    key={i}
+                    src={urlFor(item)}
                     className={i == index ? "small-image selected-image" : "small-image"}
                     onMouseEnter={() => {
                         setIndex(i)
@@ -101,8 +103,6 @@ export const getStaticProps = async ({params: {slug}}) => {
     
     const product = await client.fetch(query);
     const products = await client.fetch(productsQuery);
-
-    console.log(product);
 
     return {
         props: {product, products}
