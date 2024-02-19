@@ -81,9 +81,12 @@ export const StateContext = ({children}) => {
             value={{
                 setShowCart,
                 showCart, 
+                setCartItems,
                 cartItems, 
-                totalPrice, 
+                totalPrice,
+                setTotalPrice, 
                 totalQuantities, 
+                setTotalQuantities,
                 qty,
                 incQty,
                 decQty,
